@@ -1,0 +1,21 @@
+
+†
+java:S2229Ν"c"findOptionalEntityById's" @Transactional requirement is incompatible with the one for this method.(‚Ξμκύÿÿÿÿ8ϋέσ„δ0
+]	java:S125V"<This block of commented-out lines of code should be removed.(Ψϊφƒώÿÿÿÿ8‹ήσ„δ0
+o
+java:S6204^"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨Ή8ήσ„δ0
+]	java:S125r"<This block of commented-out lines of code should be removed.(†ΣΙάύÿÿÿÿ8‘ήσ„δ0
+P
+java:S1135†"2Complete the task associated to this TODO comment.(ΆΞ©Ύ8•ήσ„δ0
+X	java:S125‹"<This block of commented-out lines of code should be removed.(ηΘ
+8•ήσ„δ0
+p
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨Ή8—ήσ„δ0
+p
+java:S6204®"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(γ¤£’8ήσ„δ0
+^	java:S125ΐ"<This block of commented-out lines of code should be removed.(Ò‹νϊÿÿÿÿ8ήσ„δ0
+^	java:S125Η"<This block of commented-out lines of code should be removed.(«Υς’όÿÿÿÿ8ήσ„δ0
+p
+java:S6204ν"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨Ή8¤ήσ„δ0
+K
+java:S1068%".Remove this unused "postMapper" private field.(Ωƒ ξ8§ήσ„δ0

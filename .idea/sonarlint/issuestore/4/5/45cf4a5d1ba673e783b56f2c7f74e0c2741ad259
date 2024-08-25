@@ -1,0 +1,19 @@
+
+]	java:S125C"<This block of commented-out lines of code should be removed.(Â™†úÿÿÿÿ8ª‚ò„ä0
+X	java:S125X"<This block of commented-out lines of code should be removed.(ıÊÑ8³‚ò„ä0
+^	java:S125"<This block of commented-out lines of code should be removed.(şİÛˆøÿÿÿÿ8»‚ò„ä0
+p
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Ù‚ò„ä0
+^	java:S125š"<This block of commented-out lines of code should be removed.(ÈºÌØúÿÿÿÿ8ƒò„ä0
+Y	java:S125­"<This block of commented-out lines of code should be removed.(ÕİÇ§8‡ƒò„ä0
+^	java:S125Ğ"<This block of commented-out lines of code should be removed.(ÒÄôÅøÿÿÿÿ8ƒò„ä0
+X	java:S125×"<This block of commented-out lines of code should be removed.(‰«ˆ28ƒò„ä0
+p
+java:S6204ö"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8šƒò„ä0
+Y	java:S125ı"<This block of commented-out lines of code should be removed.(ÙÛïî8œƒò„ä0
+e
+java:S1612‡"GReplace this lambda with method reference 'InsertPostDto::getPostType'.(³Ó•Ò8ƒò„ä0
+a
+java:S1612ˆ"CReplace this lambda with method reference 'PostType.VIDEO::equals'.(­âøÀ8Ÿƒò„ä0
+L
+java:S1144p"/Remove this unused private "handleUser" method.(€©¡«8 ƒò„ä0
