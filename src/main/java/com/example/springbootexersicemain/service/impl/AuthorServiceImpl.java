@@ -45,5 +45,9 @@ public class AuthorServiceImpl implements AuthorService {
         return authorMapper.mapToDtoList(authorsWithBooks);
     }
 
-
+    @Override
+    public List<AuthorDto> fetchAuthorsWithMoreThanXBooks(Long bookNumber) {
+        List<Author> authorsWithBooks = authorRepository.findAuthorsWithMoreThanXBooks(bookNumber);
+        return authorMapper.mapToDtoList(authorsWithBooks);
+    }
 }

@@ -21,4 +21,7 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     // JOIN FETCH
     @Query(value = "SELECT a FROM Author a JOIN FETCH a.books b WHERE b.price > ?1")//run lazy load
     List<Author> findAuthorsBooksByPriceJoinFetch(int price);
+
+    @Query(value = "SELECT DISTINCT a FROM Author a JOIN a.books b GROUP BY a.id HAVING COUNT(b) > ?1")
+    List<Author> findAuthorsWithMoreThanXBooks(Long bookNumber);
 }

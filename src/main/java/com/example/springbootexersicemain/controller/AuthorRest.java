@@ -31,4 +31,9 @@ public class AuthorRest {
     public List<AuthorDto> getAuthorWithBookListJoinFetch(@PathVariable int price) {
         return authorService.fetchAuthorsBooksByPriceJoinFetch(price);
     }
+
+    @GetMapping("/authors-with-more-than-books/{bookNumber}")
+    public List<AuthorDto> getAuthorsWithMoreThanXBooks(@PathVariable Long bookNumber) {
+        return authorService.fetchAuthorsWithMoreThanXBooks(bookNumber);
+    }
 }

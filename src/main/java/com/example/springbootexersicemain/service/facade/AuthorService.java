@@ -10,4 +10,6 @@ public interface AuthorService {
     List<AuthorDto> fetchAuthorsBooksByPriceInnerJoin(int price);
 
     List<AuthorDto> fetchAuthorsBooksByPriceJoinFetch(int price);
+
+    List<AuthorDto> fetchAuthorsWithMoreThanXBooks(Long bookNumber);
 }
