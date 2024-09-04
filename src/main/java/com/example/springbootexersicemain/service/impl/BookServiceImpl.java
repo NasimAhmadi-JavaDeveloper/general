@@ -5,6 +5,8 @@ import com.example.springbootexersicemain.model.dto.BookDto;
 import com.example.springbootexersicemain.model.mapper.BookMapper;
 import com.example.springbootexersicemain.repository.BookRepository;
 import com.example.springbootexersicemain.service.facade.BookService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
@@ -13,6 +15,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -27,6 +30,40 @@ public class BookServiceImpl implements BookService {
     @Cacheable(value = "books")
     @Transactional(readOnly = true)
     public List<BookDto> fetchAllBooks() {
+
+        String json = "{\n" +
+                "  \"library\": {\n" +
+                "    \"name\": \"City Library\",\n" +
+                "    \"location\": \"Downtown\",\n" +
+                "    \"books\": [\n" +
+                "      {\"id\": 1, \"title\": \"Effective Java\", \"author\": \"Joshua Bloch\", \"publishedYear\": 2008},\n" +
+                "      {\"id\": 2, \"title\": \"Clean Code\", \"author\": \"Robert C. Martin\", \"publishedYear\": 2008},\n" +
+                "      {\"id\": 3, \"title\": \"The Pragmatic Programmer\", \"author\": \"Andrew Hunt\", \"publishedYear\": 1999},\n" +
+                "      {\"id\": 4, \"title\": \"Design Patterns\", \"author\": \"Erich Gamma\", \"publishedYear\": 1994},\n" +
+                "      {\"id\": 5, \"title\": \"Refactoring\", \"author\": \"Martin Fowler\", \"publishedYear\": 1999}\n" +
+                "    ]\n" +
+                "  }\n" +
+                "}";
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode rootNode = objectMapper.readTree(json);
+
+            JsonNode booksArray = rootNode.path("library").path("books");
+
+            if (booksArray.isArray() && !booksArray.isEmpty()) {
+
+                JsonNode lastBook = booksArray.get(booksArray.size() - 1);
+
+                String prettyString = lastBook.toPrettyString();
+                System.out.println("Last Book: " + prettyString);
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return bookMapper.mapToDtoList(bookRepository.findAll());
     }
 
