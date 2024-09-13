@@ -26,4 +26,11 @@ public class BookRest {
     public List<BookDto> getAllBooks() {
         return bookService.fetchAllBooks();
     }
+
+    @GetMapping("/books/{price}/{title}/{authorId}")
+    public List<BookDto> getAllByPriceAndTitleEqualsAndAuthor_id(@PathVariable Integer price,
+                                                                 @PathVariable String title,
+                                                                 @PathVariable Long authorId) {
+        return bookService.fetchAllByPriceAndTitleEqualsAndAuthor_id(price, title, authorId);
+    }
 }

@@ -16,4 +16,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Query(value = "SELECT b FROM Book b JOIN FETCH b.author a")
     List<Book> fetchBooksAuthorsJoinFetch();
+
+    List<Book> findAllByPriceAndTitleEqualsAndAuthor_id(Integer price, String title, Long authorId);
 }

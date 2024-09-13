@@ -80,4 +80,9 @@ public class BookServiceImpl implements BookService {
                     return null;
                 });
     }
+
+    @Override
+    public List<BookDto> fetchAllByPriceAndTitleEqualsAndAuthor_id(Integer price, String title, Long authorId) {
+         return bookMapper.mapToDtoList(bookRepository.findAllByPriceAndTitleEqualsAndAuthor_id(price, title, authorId));
+    }
 }

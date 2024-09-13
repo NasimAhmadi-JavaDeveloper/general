@@ -8,4 +8,6 @@ public interface BookService {
     BookDto fetchBookWithId(Long id);
 
     List<BookDto> fetchAllBooks();
+
+    List<BookDto> fetchAllByPriceAndTitleEqualsAndAuthor_id(Integer price, String title, Long authorId);
 }
