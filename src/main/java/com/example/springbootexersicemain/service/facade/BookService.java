@@ -10,4 +10,6 @@ public interface BookService {
     List<BookDto> fetchAllBooks();
 
     List<BookDto> fetchAllByPriceAndTitleEqualsAndAuthor_id(Integer price, String title, Long authorId);
+
+    void deleteBooks(Long bookId);
 }

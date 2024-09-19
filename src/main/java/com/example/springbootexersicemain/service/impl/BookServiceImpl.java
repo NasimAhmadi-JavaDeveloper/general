@@ -30,7 +30,16 @@ public class BookServiceImpl implements BookService {
     @Cacheable(value = "books")
     @Transactional(readOnly = true)
     public List<BookDto> fetchAllBooks() {
+        return bookMapper.mapToDtoList(bookRepository.findAll());
+    }
 
+    @Transactional
+    @CacheEvict(value = "books", allEntries = true)
+    public void deleteBooks(Long bookId) {
+        bookRepository.deleteById(bookId);
+    }
+
+    private static void extracted() {
         String json = "{\n" +
                 "  \"library\": {\n" +
                 "    \"name\": \"City Library\",\n" +
@@ -63,8 +72,6 @@ public class BookServiceImpl implements BookService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return bookMapper.mapToDtoList(bookRepository.findAll());
     }
 
     @Override

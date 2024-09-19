@@ -3,10 +3,8 @@ package com.example.springbootexersicemain.controller;
 import com.example.springbootexersicemain.model.dto.BookDto;
 import com.example.springbootexersicemain.service.facade.BookService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +30,11 @@ public class BookRest {
                                                                  @PathVariable String title,
                                                                  @PathVariable Long authorId) {
         return bookService.fetchAllByPriceAndTitleEqualsAndAuthor_id(price, title, authorId);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+         bookService.deleteBooks(id);
+         ResponseEntity.ok().build();
     }
 }
